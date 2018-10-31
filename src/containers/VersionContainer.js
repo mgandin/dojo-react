@@ -9,6 +9,8 @@ const mapStateToProps = state => {
 }
 
 // Visible for testing
-export const filter = (vehicules, puissance) => vehicules.filter(vehicule => vehicule.puissance === puissance)
+export const filter = (vehicules, puissance) => puissance
+    ? vehicules.filter(vehicule => vehicule.puissance === puissance)
+    : vehicules
 
 export default connect(mapStateToProps)(Version)
