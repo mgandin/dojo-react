@@ -3,14 +3,15 @@ import { connect } from "react-redux"
 
 const mapStateToProps = state => {
     return {
-        vehicules: filter(state.selector.vehicules, state.selector.selectedPuissance),
-        puissance: state.selector.selectedPuissance
+        vehicules: filter(state.selector.vehicules, state.selector.selectedPuissance, state.selector.selectedCarrosserie),
+        puissance: state.selector.selectedPuissance,
+        carrosserie: state.selector.selectedCarrosserie
     }
 }
 
 // Visible for testing
-export const filter = (vehicules, puissance) => puissance
-    ? vehicules.filter(vehicule => vehicule.puissance === puissance)
-    : vehicules
+export const filter = (vehicules, puissance, carrosserie) => vehicules
+    .filter(vehicule => puissance ? vehicule.puissance === puissance : vehicule)
+    .filter(vehicule => carrosserie ? vehicule.carrosserie === carrosserie : vehicule)
 
 export default connect(mapStateToProps)(Version)

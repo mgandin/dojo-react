@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import VersionContainer from '../containers/VersionContainer';
-import FilterContainer from '../containers/FilterContainer'
+import PuissanceContainer from '../containers/PuissanceContainer'
+import CarrosserieContainer from '../containers/CarrosserieContainer'
 
 class Vehiculier extends Component {
 
     render() {
         return (
             <div className="App">
-                <FilterContainer/>
+                <PuissanceContainer/>
+                <CarrosserieContainer/>
                 <VersionContainer/>
             </div>
         );

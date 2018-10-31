@@ -3,17 +3,17 @@ import { connect } from "react-redux"
 
 const mapStateToProps = state => {
     return {
-        puissances: filter(state.selector.vehicules)
+        values: filter(state.selector.vehicules)
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        updateValues: puissance => dispatch( { type: "SELECT_PUISSANCE", puissance: parseInt(puissance) } )
+        updateValues: carrosserie => dispatch( { type: "SELECT_CARROSSERIE", carrosserie: carrosserie } )
     }
 }
 
 // Visible for testing
-export const filter = (vehicules) => [...new Set(vehicules.map(vehicule => vehicule.puissance))].sort()
+export const filter = (vehicules) => [...new Set(vehicules.map(vehicule => vehicule.carrosserie))].sort()
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filters)

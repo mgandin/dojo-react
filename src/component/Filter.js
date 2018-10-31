@@ -1,9 +1,9 @@
 import React from 'react';
-const Filters = ({puissances, updateValues}) =>(
+const Filters = ({values, updateValues}) =>(
     <select onChange={event => {updateValues(event.target.value)}}>
         <option value={null}>Select</option>
         {
-            puissances.map(puissance => <option value={puissance}>{puissance}</option>)
+            values.map(value => <option value={value}>{value}</option>)
         }
     </select>
 )
